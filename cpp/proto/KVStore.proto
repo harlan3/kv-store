@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package kvstore_ns;
+
+enum DBASE_Action {
+    
+    DBASE_SET = 0;
+};
+
+enum TYPE_Info {
+
+    TYPE_INT32  = 0;
+    TYPE_INT64  = 1;
+    TYPE_FLOAT  = 2;
+    TYPE_DOUBLE = 3;
+    TYPE_BOOL   = 4;
+    TYPE_STRING = 5;
+    TYPE_BYTES  = 6;
+    TYPE_EVENT  = 7;
+};
+
+enum ARCH_Info {
+            
+    ARCH_BIG_ENDIAN    = 0;
+    ARCH_LITTLE_ENDIAN = 1;
+};
+
+message KeyValueSet {
+            
+    string key = 1;
+    TYPE_Info typeInfo = 2;
+    int32 numberElements = 3;
+    bytes byteBuffer = 4;
+};
+
+message Transaction {
+    
+    int32 publisherID = 1;
+    int64 timeStamp = 2;
+    DBASE_Action action = 3;
+    ARCH_Info systemByteOrder = 4;
+    repeated KeyValueSet keyValueSet = 5;
+};

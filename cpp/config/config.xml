@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <listenAddress>0.0.0.0</listenAddress>
+    <multicastAddress>239.0.0.1</multicastAddress>
+    <multicastPort>30001</multicastPort>
+    <recvLoopSleepTime>30</recvLoopSleepTime>
+    <sendLoopSleepTime>30</sendLoopSleepTime>
+    <publisherID>15</publisherID>
+    <endianness>LITTLE_ENDIAN</endianness>
+    <processCallbacks>true</processCallbacks>
+</config>
